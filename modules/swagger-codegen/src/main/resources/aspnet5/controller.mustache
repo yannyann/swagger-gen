@@ -34,14 +34,6 @@ namespace {{packageName}}.Controllers
         public abstract {{#returnType}}IActionResult{{/returnType}}{{^returnType}}void{{/returnType}} {{operationId}}({{#allParams}}{{>pathParam}}{{>queryParam}}{{>bodyParam}}{{>formParam}}{{>headerParam}}{{#hasMore}}, {{/hasMore}}{{/allParams}});
 {{/operation}}
     }
-    public class {{classname}}Controller : {{classname}}AbstractController
-    { {{#operation}}
-        public override {{#returnType}}IActionResult{{/returnType}}{{^returnType}}void{{/returnType}} {{operationId}}({{#allParams}}{{>pathParam}}{{>queryParam}}{{>bodyParam}}{{>formParam}}{{>headerParam}}{{#hasMore}}, {{/hasMore}}{{/allParams}})
-        {
-            throw new NotImplementedException();
-        }
-        {{/operation}}
-    }
 
 {{/operations}}
 }
