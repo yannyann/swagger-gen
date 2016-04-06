@@ -51,7 +51,7 @@ namespace {{packageName}}
             // You will also need to add the Microsoft.AspNet.Mvc.WebApiCompatShim package to the 'dependencies' section of project.json.
             // services.AddWebApiConventions();
 
-            services.AddSwaggerGen();
+            /*services.AddSwaggerGen();
             services.ConfigureSwaggerDocument(options =>
             {
                 options.SingleApiVersion(new Info
@@ -67,7 +67,7 @@ namespace {{packageName}}
             services.ConfigureSwaggerSchema(options => { 
                 options.DescribeAllEnumsAsStrings = true; 
                 options.ModelFilter(new ApplyXmlTypeCommentsFixed(xmlComments));
-            });
+            });*/
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -84,8 +84,8 @@ namespace {{packageName}}
 
             app.UseMvc();
 
-            app.UseSwaggerGen();
-            app.UseSwaggerUi();
+            /*app.UseSwaggerGen();
+            app.UseSwaggerUi();*/
         }
 
         // Taken from https://github.com/domaindrivendev/Ahoy/blob/master/test/WebSites/Basic/Startup.cs
