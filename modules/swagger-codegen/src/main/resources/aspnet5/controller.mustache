@@ -31,7 +31,7 @@ namespace {{packageName}}.Controllers
         [Route("{{path}}")]
         [SwaggerOperation("{{operationId}}")]{{#returnType}}
         [SwaggerResponse(200, type: typeof({{&returnType}}))]{{/returnType}}
-        public abstract {{#returnType}}IActionResult{{/returnType}}{{^returnType}}void{{/returnType}} {{operationId}}({{#allParams}}{{>pathParam}}{{>queryParam}}{{>bodyParam}}{{>formParam}}{{>headerParam}}{{#hasMore}}, {{/hasMore}}{{/allParams}});
+        public abstract {{#returnType}}Task<IActionResult>{{/returnType}}{{^returnType}}Task{{/returnType}} {{operationId}}({{#allParams}}{{>pathParam}}{{>queryParam}}{{>bodyParam}}{{>formParam}}{{>headerParam}}{{#hasMore}}, {{/hasMore}}{{/allParams}});
 {{/operation}}
     }
 
